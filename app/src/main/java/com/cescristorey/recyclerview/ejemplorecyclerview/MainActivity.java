@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //inicialización de la lista de datos de ejemplo
-        ArrayList<Equipo> datos = new ArrayList<Equipo>();
+        ArrayList<Equipo> datos = new ArrayList<>();
         datos.add(new Equipo("FC Barcelona", "Camp Nou", "Ronald Koeman"));
         datos.add(new Equipo("Real Madrid Club de Futbol","Metropolitano","Diego Simeone"));
         datos.add(new Equipo("Sevilla Club de Futbol","Ramon Sanchez Pizjuan","Julen Lopetegui"));
@@ -28,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
         datos.add(new Equipo("Villareal Club de Futbol","Estadio de la Ceramica","Fernando Roig Alfonso"));
         datos.add(new Equipo("Ahtletic Club","San Mames","Gaizka Garitano"));
         datos.add(new Equipo("Real Club Celta de Vigo","Balaidos","Oscar Garcia Junyent"));
+        datos.add(new Equipo("Granada Club de Futbol","Nuevo Los Carmenes","Diego Martinez Penas"));
+        datos.add(new Equipo("Getafe Club de Futbol","Coliseum Alfonso Perez","Jose Bordalas"));
 
         //Inicialización RecyclerView
-        recyclerView = (RecyclerView) findViewById(R.id.RecView);
+        recyclerView = findViewById(R.id.RecView);
         recyclerView.setHasFixedSize(false);
 
         //Crea el adaptador, pasándole como parámetro los datos
