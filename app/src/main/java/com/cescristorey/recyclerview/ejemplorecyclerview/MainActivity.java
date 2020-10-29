@@ -22,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
         datos.add(new Equipo("FC Barcelona", "Camp Nou", "Ronald Koeman"));
         datos.add(new Equipo("Real Madrid Club de Futbol","Metropolitano","Diego Simeone"));
         datos.add(new Equipo("Sevilla Club de Futbol","Ramon Sanchez Pizjuan","Julen Lopetegui"));
+        datos.add(new Equipo("Real Betis Bolmpie","Benito Villamarin","Mauel Pellegrini"));
+        datos.add(new Equipo("Real Sociedad de Futbol","Reale Arena","Imanol Algualcil"));
+        datos.add(new Equipo("Valencia Club de Futbol","Mestalla","Javi Garcia"));
+        datos.add(new Equipo("Villareal Club de Futbol","Estadio de la Ceramica","Fernando Roig Alfonso"));
+        datos.add(new Equipo("Ahtletic Club","San Mames","Gaizka Garitano"));
+        datos.add(new Equipo("Real Club Celta de Vigo","Balaidos","Oscar Garcia Junyent"));
 
         //Inicialización RecyclerView
         recyclerView = (RecyclerView) findViewById(R.id.RecView);
