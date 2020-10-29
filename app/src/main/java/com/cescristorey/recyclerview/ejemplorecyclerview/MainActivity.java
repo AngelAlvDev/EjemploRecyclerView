@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         datos.add(new Equipo("Real Club Celta de Vigo","Balaidos","Oscar Garcia Junyent"));
         datos.add(new Equipo("Granada Club de Futbol","Nuevo Los Carmenes","Diego Martinez Penas"));
         datos.add(new Equipo("Getafe Club de Futbol","Coliseum Alfonso Perez","Jose Bordalas"));
+        datos.add(new Equipo("Deportivo Alaves","Mendizorroza","Pablo Machin"));
+        datos.add(new Equipo("Sociedad Deportiva Eibar","Ipurua","Jose Luis Mendilibar"));
+        datos.add(new Equipo("Club Atletico Osasona","El Sadar","Jagoba Arrasate"));
+        datos.add(new Equipo("Levante Union Deportiva","Camilo Cano","Paco Lopez"));
+        datos.add(new Equipo("Real Valladolid Club de Futbol","Jose Zorrilla","Sergio Gonzalez Soriano"));
+        datos.add(new Equipo("Sociedad Deportiva Huesca","El Alcoraz","Francisco Rodriguez Vilchez"));
+        datos.add(new Equipo("Cadiz Club de Futbol","Ramon de Carranza ","Oscar Arias"));
+        datos.add(new Equipo("Elche Club de Futbol","Manuel Martinez Valero","Jose Rojo Martin"));
+        datos.add(new Equipo("Club Deportio Leganes","Municipal Butarque","Javier Aguirre"));
 
         //Inicialización RecyclerView
         recyclerView = findViewById(R.id.RecView);
