@@ -17,7 +17,11 @@ public class EquipoAdapter
 
     /*Arraylist donde almaceno los datos que se van a mostrar en el RecylerView*/
     private ArrayList<Equipo> datos;
+    private final OnItemClickListener listener;
 
+    public interface OnItemClickListener {
+        void onItemClick(Equipo item);
+    }
     /* Incluyo el Viewholder en el Adapter */
     public static class EquipoViewHolder
             extends RecyclerView.ViewHolder {
@@ -36,17 +40,23 @@ public class EquipoAdapter
         }
 
         /*Muestra los datos de equipo en el item*/
-        public void bindEquipo(Equipo equipo) {
+        public void bindEquipo(final Equipo equipo,final OnItemClickListener listener) {
             tvEquipo.setText(equipo.getNom_equipo());
             tvEstadio.setText(equipo.getEstadio());
             tvEntrenador.setText(equipo.getEntrenador());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    listener.onItemClick(equipo);
+                }
+            });
         }
     }
 
 
     /* Constructor con parámetros*/
-    public EquipoAdapter(ArrayList<Equipo> datos) {
+    public EquipoAdapter(ArrayList<Equipo> datos, OnItemClickListener listener) {
         this.datos = datos;
+        this.listener = listener;
     }
 
     @Override
@@ -64,7 +74,7 @@ public class EquipoAdapter
     public void onBindViewHolder(EquipoViewHolder viewHolder, int pos) {
         Equipo equipo = datos.get(pos);
         /* Llama a bindCoche, para que "pinte" los datos del equipo que se le pasa como parámetro*/
-        viewHolder.bindEquipo(equipo);
+         viewHolder.bindEquipo(equipo,listener);
     }
 
     @Override

@@ -1,15 +1,22 @@
 package com.cescristorey.recyclerview.ejemplorecyclerview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
+
+
 
 
     @Override
@@ -45,12 +52,32 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(false);
 
         //Crea el adaptador, pasándole como parámetro los datos
-        final EquipoAdapter adaptador = new EquipoAdapter(datos);
+        final EquipoAdapter adaptador = new EquipoAdapter(datos, new EquipoAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Equipo item) {
+                Intent buttonIntent = null;
+
+                buttonIntent = new Intent(getApplicationContext(),Salida.class);
+                String a = item.getEntrenador();
+                String b = item.getEstadio();
+                String c = item.getNom_equipo();
+
+                buttonIntent.putExtra("nombre", c);
+                buttonIntent.putExtra("estadio",b);
+                buttonIntent.putExtra("entrendador",a);
+                startActivity(buttonIntent);
+            }
+        });
 
         //Asocia a recylerView el adaptador
         recyclerView.setAdapter(adaptador);
 
         //Fija un layout linear al recyclerview
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        // Pone la animación por defecto
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 }
