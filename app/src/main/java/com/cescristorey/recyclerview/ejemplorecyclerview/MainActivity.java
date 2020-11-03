@@ -55,17 +55,17 @@ public class MainActivity extends AppCompatActivity {
         final EquipoAdapter adaptador = new EquipoAdapter(datos, new EquipoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Equipo item) {
-                Intent buttonIntent = null;
+                Intent campo = null;
 
-                buttonIntent = new Intent(getApplicationContext(),Salida.class);
+                campo = new Intent(getApplicationContext(),SalidaActivity.class);
                 String a = item.getEntrenador();
                 String b = item.getEstadio();
                 String c = item.getNom_equipo();
 
-                buttonIntent.putExtra("nombre", c);
-                buttonIntent.putExtra("estadio",b);
-                buttonIntent.putExtra("entrendador",a);
-                startActivity(buttonIntent);
+                campo.putExtra("nombre", c);
+                campo.putExtra("estadio",b);
+                campo.putExtra("entrenador",a);
+                startActivity(campo);
             }
         });
 
